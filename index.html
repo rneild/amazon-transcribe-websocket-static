@@ -88,12 +88,13 @@
                 <button id="stop-button" class="button-xl" title="Stop Transcription" disabled="true"><i
                         class="fa fa-stop-circle"></i> Stop
                 </button>
+                <button id="parse-button" class="button-xl button-secondary" title="Parse Transcript">
+                    Parse Transcript
+                </button>
                 <button id="reset-button" class="button-xl button-secondary" title="Clear Transcript">
                     Clear Transcript
                 </button>
-                <button id="parse-button" class="button-xl button-secondary" title="Parse Transcript">
-                    Parse Transcript
-                </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button id="demo-button" class="button-xl button-secondary" title="Add Demo Transcript">
                     Add Demo Transcript
                 </button>
@@ -161,8 +162,8 @@
 
                 var question
                 question = 'The following is feedback from a patient at a hospital. They are talking about the food service. '
-                question += 'If the feedback was negative then this hospital wants to make it right. '
-                question += 'Write me an email confirming that we heard their feedback and take it seriously. Include any relevant details from their feedback to make it personal. '
+                question += 'If the feedback was negative then this hospital wants to make it right. We aim to provide healthy and tasty food choices to our patients.'
+                question += 'Write me an email confirming that we heard their feedback about the food service and take it seriously. Include any relevant details from their feedback to make it personal. '
                 question += 'Format the response as an HTML email. '
                 question += 'This is their feedback "'
                 question += transcript
