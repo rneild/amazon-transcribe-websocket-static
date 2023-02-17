@@ -1,0 +1,183 @@
+{
+    "secret": "passpass",
+    "question": "What is the ID",
+    "agreement": {
+        "data": {
+            "hrn": "hrn:hrs:agreements:224",
+            "id": "CTA00000028",
+            "title": "test by RG-Rashmitha1",
+            "principalInvestigator": {
+                "personId": 0,
+                "firstName": "Nick",
+                "lastName": "Perez",
+                "name": "Perez, Nick",
+                "contactInformation": {
+                    "phone": "999999999",
+                    "email": "workmailuser01@hrsv12dev.awsapps.com"
+                },
+                "active": false,
+                "hrn": "hrn:hrs:persons:26"
+            },
+            "primaryContact": {
+                "personId": 0,
+                "firstName": "Rebecca",
+                "lastName": "Simms",
+                "name": "Simms, Rebecca",
+                "contactInformation": {
+                    "phone": "123123123",
+                    "email": "workmailuser01@hrsv12dev.awsapps.com"
+                },
+                "active": false,
+                "hrn": "hrn:hrs:persons:6"
+            },
+            "responsibleUnit": {
+                "name": "Immunology",
+                "hrn": "hrn:hrs:orgs:103"
+            },
+            "agreementType": {
+                "id": "CTA",
+                "name": "Clinical Trial Agreement",
+                "description": "Clinical Trial Agreement",
+                "hrn": "hrn:hrs:lists:agrmt-types/CTA"
+            },
+            "projectState": {
+                "id": "Unassigned",
+                "name": "Unassigned"
+            },
+            "workflowStatus": {},
+            "firstDraftTobeGeneratedInternally": true,
+            "counterParties": [
+                {
+                    "person": {
+                        "personId": 0,
+                        "firstName": "Dalton",
+                        "lastName": "Barlow",
+                        "contactInformation": {
+                            "phone": "321321321",
+                            "email": "workmailuser01@hrsv12dev.awsapps.com"
+                        },
+                        "active": false,
+                        "hrn": "hrn:hrs:persons:19"
+                    },
+                    "organization": {
+                        "name": "Huron University",
+                        "hrn": "hrn:hrs:orgs:101"
+                    }
+                }
+            ],
+            "agreementTypeData": {
+                "cro": {
+                    "hrn": "hrn:hrs:orgs:101",
+                    "name": "Huron University"
+                },
+                "croOther": "Test CRO",
+                "willUseCro": true,
+                "typeOfTrial": {
+                    "hrn": "hrn:hrs:lists:agrmt-cta-type-trial/ind-sp",
+                    "name": "Industry Sponsored"
+                },
+                "ctaMaterials": null,
+                "phaseOfStudy": null,
+                "protocolTitle": "",
+                "studyLocations": null,
+                "cooperativeGroup": null,
+                "croContactsOther": [
+                    {
+                        "person": {
+                            "hrn": "hrn:hrs:persons:6",
+                            "lastName": "Simms",
+                            "firstName": "Rebecca",
+                            "contactInformation": {
+                                "email": "workmailuser01@hrsv12dev.awsapps.com",
+                                "phone": "123123123"
+                            }
+                        }
+                    },
+                    {
+                        "person": {
+                            "hrn": "hrn:hrs:persons:71",
+                            "lastName": "G",
+                            "firstName": "Rashmitha",
+                            "contactInformation": {
+                                "email": "rg@hcg.com",
+                                "phone": "8217585275"
+                            }
+                        }
+                    }
+                ],
+                "protocolDocument": null,
+                "croContactPrimary": {
+                    "person": {
+                        "hrn": "hrn:hrs:persons:6",
+                        "lastName": "Simms",
+                        "firstName": "Rebecca",
+                        "contactInformation": {
+                            "email": "workmailuser01@hrsv12dev.awsapps.com",
+                            "phone": "123123123"
+                        }
+                    }
+                },
+                "ctaMaterialsOther": null,
+                "phaseOfStudyOther": "",
+                "consentFormsDocuments": null,
+                "sponsorProtocolNumber": "",
+                "subrecipientsOrganizations": null,
+                "isReimbursementTobeProvided": true,
+                "doesThisInvolveSubrecipients": null,
+                "doesThisInvolveOtherMaterials": false,
+                "isStudyPartOfCooperativeGroup": null
+            },
+            "isAgreementModificationInProcess": false,
+            "office": {
+                "id": 1,
+                "name": "Admin office"
+            },
+            "isEarlyTermination": false,
+            "tags": [
+                {
+                    "name": "tag1011",
+                    "hrn": "hrn:hrs:lists:tags/default~tag1011"
+                }
+            ],
+            "submitDate": "2023-01-23T10:13:41.577213Z",
+            "active": true,
+            "dateCreated": "2023-01-20T16:47:31.397472Z",
+            "dateModified": "2023-01-23T13:08:15.526143Z",
+            "submissionType": "Agreement",
+            "actions": [
+                "ApplyTag",
+                "AssignOffice",
+                "AssignOwner",
+                "BypassAncillaryBlock",
+                "CopyAgreement",
+                "CreateFollowUp",
+                "Discard",
+                "GenerateAgreement",
+                "LogSendNote",
+                "ManageAccess",
+                "ManageDocuments",
+                "ManageRelationships",
+                "RemoveTag",
+                "RequestClarification",
+                "RequestPIConcurrence",
+                "Withdraw",
+                "CreateAncillaryReview"
+            ],
+            "assignments": [
+                "agreement_staff"
+            ],
+            "fieldAttributes": {
+                "note": [
+                    {
+                        "fieldId": "isPrivate",
+                        "isRestricted": false
+                    },
+                    {
+                        "fieldId": "includeAgreementFile",
+                        "isRestricted": false
+                    }
+                ]
+            }
+        }
+    }
+}
