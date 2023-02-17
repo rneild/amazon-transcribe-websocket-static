@@ -2,10 +2,18 @@
 
 <head>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>Amazon Transcribe WebSocket API - Sample Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,8 +77,8 @@
         <h4>Did you enjoy dinner? Where there any issues and is there anything that we can do
             to improve?</h4>
 
-        <textarea id="transcript" placeholder="Press Start and speak into your mic" rows="5" cols="50"
-            readonly="readonly"></textarea>
+        <!-- readonly="readonly" -->
+        <textarea id="transcript" placeholder="Press Start and speak into your mic" rows="10" cols="100"></textarea>
         <div class="row">
 
             <div class="col">
@@ -83,269 +91,123 @@
                 <button id="reset-button" class="button-xl button-secondary" title="Clear Transcript">
                     Clear Transcript
                 </button>
-                <button id="parse-button" xxonclick="parse()" class="button-xl button-secondary"
-                    title="Parse Transcript">
+                <button id="parse-button" class="button-xl button-secondary" title="Parse Transcript">
                     Parse Transcript
+                </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="demo-button" class="button-xl button-secondary" title="Add Demo Transcript">
+                    Add Demo Transcript
                 </button>
             </div>
         </div>
 
         <script>
+            $('#demo-button').click(function () {
 
+                $('#transcript').val("Yeah, I got my dinner today. It was okay. But I'm vegetarian. I really, I just wish, I just wish you guys would do something better for me. I'm just not going to be just having what you have without the meat. It was cold too, so just bland really. But whatever. It doesn't matter too much. I've got other bigger problems. Yeah, yeah. You know, it will be better. It's just never on this. It's just so the different schedule all the time, different times of day. If you could come on the regular, if you could come at the same time, that would be great. Maybe I should know what time it's coming or what's on the menu and that way I could prepare myself for it. You know.")
+
+            })
 
             $('#parse-button').click(function () {
 
-
-                var q = "Who are email addresses the CRO contacts?"
-
-                var payload = {
-                    "secret": "passpass",
-                    "question": q,
-                    "agreement": {
-                        "data": {
-                            "hrn": "hrn:hrs:agreements:224",
-                            "id": "CTA00000028",
-                            "title": "test by RG-Rashmitha1",
-                            "principalInvestigator": {
-                                "personId": 0,
-                                "firstName": "Nick",
-                                "lastName": "Perez",
-                                "name": "Perez, Nick",
-                                "contactInformation": {
-                                    "phone": "999999999",
-                                    "email": "workmailuser01@hrsv12dev.awsapps.com"
-                                },
-                                "active": false,
-                                "hrn": "hrn:hrs:persons:26"
-                            },
-                            "primaryContact": {
-                                "personId": 0,
-                                "firstName": "Rebecca",
-                                "lastName": "Simms",
-                                "name": "Simms, Rebecca",
-                                "contactInformation": {
-                                    "phone": "123123123",
-                                    "email": "workmailuser01@hrsv12dev.awsapps.com"
-                                },
-                                "active": false,
-                                "hrn": "hrn:hrs:persons:6"
-                            },
-                            "responsibleUnit": {
-                                "name": "Immunology",
-                                "hrn": "hrn:hrs:orgs:103"
-                            },
-                            "agreementType": {
-                                "id": "CTA",
-                                "name": "Clinical Trial Agreement",
-                                "description": "Clinical Trial Agreement",
-                                "hrn": "hrn:hrs:lists:agrmt-types/CTA"
-                            },
-                            "projectState": {
-                                "id": "Unassigned",
-                                "name": "Unassigned"
-                            },
-                            "workflowStatus": {},
-                            "firstDraftTobeGeneratedInternally": true,
-                            "counterParties": [
-                                {
-                                    "person": {
-                                        "personId": 0,
-                                        "firstName": "Dalton",
-                                        "lastName": "Barlow",
-                                        "contactInformation": {
-                                            "phone": "321321321",
-                                            "email": "workmailuser01@hrsv12dev.awsapps.com"
-                                        },
-                                        "active": false,
-                                        "hrn": "hrn:hrs:persons:19"
-                                    },
-                                    "organization": {
-                                        "name": "Huron University",
-                                        "hrn": "hrn:hrs:orgs:101"
-                                    }
-                                }
-                            ],
-                            "agreementTypeData": {
-                                "cro": {
-                                    "hrn": "hrn:hrs:orgs:101",
-                                    "name": "Huron University"
-                                },
-                                "croOther": "Test CRO",
-                                "willUseCro": true,
-                                "typeOfTrial": {
-                                    "hrn": "hrn:hrs:lists:agrmt-cta-type-trial/ind-sp",
-                                    "name": "Industry Sponsored"
-                                },
-                                "ctaMaterials": null,
-                                "phaseOfStudy": null,
-                                "protocolTitle": "",
-                                "studyLocations": null,
-                                "cooperativeGroup": null,
-                                "croContactsOther": [
-                                    {
-                                        "person": {
-                                            "hrn": "hrn:hrs:persons:6",
-                                            "lastName": "Simms",
-                                            "firstName": "Rebecca",
-                                            "contactInformation": {
-                                                "email": "workmailuser01@hrsv12dev.awsapps.com",
-                                                "phone": "123123123"
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "person": {
-                                            "hrn": "hrn:hrs:persons:71",
-                                            "lastName": "G",
-                                            "firstName": "Rashmitha",
-                                            "contactInformation": {
-                                                "email": "rg@hcg.com",
-                                                "phone": "8217585275"
-                                            }
-                                        }
-                                    }
-                                ],
-                                "protocolDocument": null,
-                                "croContactPrimary": {
-                                    "person": {
-                                        "hrn": "hrn:hrs:persons:6",
-                                        "lastName": "Simms",
-                                        "firstName": "Rebecca",
-                                        "contactInformation": {
-                                            "email": "workmailuser01@hrsv12dev.awsapps.com",
-                                            "phone": "123123123"
-                                        }
-                                    }
-                                },
-                                "ctaMaterialsOther": null,
-                                "phaseOfStudyOther": "",
-                                "consentFormsDocuments": null,
-                                "sponsorProtocolNumber": "",
-                                "subrecipientsOrganizations": null,
-                                "isReimbursementTobeProvided": true,
-                                "doesThisInvolveSubrecipients": null,
-                                "doesThisInvolveOtherMaterials": false,
-                                "isStudyPartOfCooperativeGroup": null
-                            },
-                            "isAgreementModificationInProcess": false,
-                            "office": {
-                                "id": 1,
-                                "name": "Admin office"
-                            },
-                            "isEarlyTermination": false,
-                            "tags": [
-                                {
-                                    "name": "tag1011",
-                                    "hrn": "hrn:hrs:lists:tags/default~tag1011"
-                                }
-                            ],
-                            "submitDate": "2023-01-23T10:13:41.577213Z",
-                            "active": true,
-                            "dateCreated": "2023-01-20T16:47:31.397472Z",
-                            "dateModified": "2023-01-23T13:08:15.526143Z",
-                            "submissionType": "Agreement",
-                            "actions": [
-                                "ApplyTag",
-                                "AssignOffice",
-                                "AssignOwner",
-                                "BypassAncillaryBlock",
-                                "CopyAgreement",
-                                "CreateFollowUp",
-                                "Discard",
-                                "GenerateAgreement",
-                                "LogSendNote",
-                                "ManageAccess",
-                                "ManageDocuments",
-                                "ManageRelationships",
-                                "RemoveTag",
-                                "RequestClarification",
-                                "RequestPIConcurrence",
-                                "Withdraw",
-                                "CreateAncillaryReview"
-                            ],
-                            "assignments": [
-                                "agreement_staff"
-                            ],
-                            "fieldAttributes": {
-                                "note": [
-                                    {
-                                        "fieldId": "isPrivate",
-                                        "isRestricted": false
-                                    },
-                                    {
-                                        "fieldId": "includeAgreementFile",
-                                        "isRestricted": false
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                }
-
-                // var url = 'https://e31l0t06g3.execute-api.us-west-2.amazonaws.com/default/chatGPT'
-                var url = 'https://si47ijc9w3.execute-api.us-west-2.amazonaws.com/default/chatGPT'
-
-                // $.post(url, function (payload) {
-                //     $("#positive").html(data);
-                //     alert(1)
-                // });
-
-                $.ajax({
-                    url: url,
-                    type: "POST",
-                    crossDomain: true,
-                    data: JSON.stringify(payload),
-                    // data: payload,
-                    dataType: "json",
-                    success: function (response) {
-                        console.log(response)
-                        // alert(response)
-                        // var resp = JSON.parse(response)
-                        // alert(resp.status);
-                        console.log(response.secret)
-                    },
-                    error: function (xhr, status) {
-                        alert("error");
-                    }
+                $(".ans").fadeOut("slow", function () {
+                    $(".ans").empty();
                 });
 
+                var url = 'https://si47ijc9w3.execute-api.us-west-2.amazonaws.com/default/chatGPT'
 
+                var payload, callback
+
+                var transcript = $("#transcript").val()
+
+                var question
+                question = 'The following is feedback from a patient at a hospital. They are talking about the food service. I want you to call out all the positives, the negatives, and any improvements that they suggest into 3 separate lists. '
+                question += 'I want you to give me the feedback in HTML. I want the titles of the lists to be "Positives", "Negatives", and "Suggested Improvements" inside an H2 element. '
+                question += 'If there were none in a particular list write "N/A" in that list. '
+                question += 'I want the items to be in a bulleted list. '
+                question += 'This is their feedback "'
+                question += transcript
+                question += '"'
+
+                payload = { "question": question }
+                callback = function (answer) { $("#suggestions").html(answer).fadeIn("slow") }
+                update(payload, callback)
+
+                var question
+                question = 'The following is feedback from a patient at a hospital. They are talking about the food service. '
+                question += 'On a scale of 1-10 where 1 is unhappy and 10 is very happy how would you say this person might rank their experience with the food? '
+                question += 'Give me a the result in HTML format. Give me a H2 title called Rating followed by a paragraph containing a reason for the rating and the rating out of ten. '
+                question += 'This is their feedback "'
+                question += transcript
+                question += '"'
+
+                payload = { "question": question }
+                callback = function (answer) { $("#rating").html(answer).fadeIn("slow") }
+                update(payload, callback)
+
+                var question
+                question = 'The following is feedback from a patient at a hospital. They are talking about the food service. '
+                question += 'It is important that all patients be given am opportunity to select their food from a menu. This hopital has a target that this should happen every day without fail. '
+                question += 'I want you to tell me if you can tell from the feedback provided, if we can tell that if patient given a menu and given a opportunity to select their food? '
+                question += 'If we can tell that they were offered this opportunuity then I want you to return a response that says "Target Met: Patient was offered a menu and a choice of food. '
+                question += 'If we can tell that they were not offered this opportunuity then I want you to return a response that says "Target Missed: Patient was not offered a menu and a choice of food. '
+                question += 'If we cannot tell if they where offered this opportunuity then I want you to return a response that says "Target Unclear:" and suggest the phrasing of a followup question to get the missing data. Be very polite. '
+                question += 'This is their feedback "'
+                question += transcript
+                question += '"'
+
+                payload = { "question": question }
+                callback = function (answer) { $("#menu").html(`<h2>Metric 3: Was the Patient Given an Opportunity to Pick Food From Menu?</h2><p>${answer}</p>`).fadeIn("slow") }
+                update(payload, callback)
+
+                var question
+                question = 'The following is feedback from a patient at a hospital. They are talking about the food service. '
+                question += 'If the feedback was negative then this hospital wants to make it right. '
+                question += 'Write me an email confirming that we heard their feedback and take it seriously. Include any relevant details from their feedback to make it personal. '
+                question += 'Format the response as an HTML email. '
+                question += 'This is their feedback "'
+                question += transcript
+                question += '"'
+
+                payload = { "question": question }
+                callback = function (answer) { $("#response").html(`<h2>Suggested Customer Service Email</h2>${answer}`).fadeIn("slow") }
+                update(payload, callback)
+
+
+                function update(payload, callback) {
+                    payload.secret = "passpass"
+                    $.ajax({
+                        url: url,
+                        type: "POST",
+                        crossDomain: true,
+                        data: JSON.stringify(payload),
+                        // data: payload,
+                        dataType: "json",
+                        success: function (response) {
+                            console.log(response)
+                            // alert(response)
+                            // var resp = JSON.parse(response)
+                            // alert(resp.status);
+                            console.log(response.answer)
+                            callback(response.answer)
+                            // $("#positives").html(`<h2>Positives</h2><div style="border: 1px solid black; padding:20px">${response.answer}</div>`)
+                        },
+                        error: function (xhr, status) {
+                            alert("error");
+                        }
+                    });
+                }
             });
-
 
         </script>
 
+        <span id="suggestions" class="ans"></span>
 
+        <span id="rating" class="ans"></span>
 
+        <span id="menu" class="ans"></span>
 
+        <span id="response" class="ans"></span>
 
-        <span id="positive">
-            <h2>Positives</h2>
-            <p>xxx</p>
-        </span>
-
-
-        <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
-        <!-- <h2>Q1: Laundry Service</h2>
-
-        <h4>Are you satisfied with the laundry service today? Are your clothes clean and fresh?</h4>
-
-        <textarea id="transcript2" placeholder="Press Start and speak into your mic" rows="5" cols="50"
-            readonly="readonly"></textarea>
-        <div class="row">
-
-            <div class="col">
-                <button id="start-button2" class="button-xl" title="Start Transcription">
-                    <i class="fa fa-microphone"></i> Start
-                </button>
-                <button id="stop-button2" class="button-xl" title="Stop Transcription" disabled="true"><i
-                        class="fa fa-stop-circle"></i> Stop
-                </button>
-                <button id="reset-button2" class="button-xl button-secondary" title="Clear Transcript">
-                    Clear Transcript
-                </button>
-            </div>
-        </div> -->
 
 
     </div>
