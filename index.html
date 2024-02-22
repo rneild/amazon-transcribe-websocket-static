@@ -192,7 +192,8 @@
                             // var resp = JSON.parse(response)
                             // alert(resp.status);
                             console.log(response.answer)
-                            callback(response.answer)
+                            console.log(response.answer.message.content)
+                            callback(response.answer.message.content)
                             // $("#positives").html(`<h2>Positives</h2><div style="border: 1px solid black; padding:20px">${response.answer}</div>`)
                         },
                         error: function (xhr, status) {
